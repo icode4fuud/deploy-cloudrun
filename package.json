@@ -1,10 +1,10 @@
 {
   "name": "deploy-cloudrun",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Github Action: Deploy to Google Cloud Run",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf dist/ && ncc build -m src/main.ts -o dist/main",
+    "build": "rm -rf dist/ && ncc build -m src/main.ts -o dist/main && node tests/index.js",
     "docs": "./node_modules/.bin/actions-gen-readme",
     "lint": "eslint .",
     "format": "eslint . --fix",
@@ -51,6 +51,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint": "^9.34.0",
+    "eslint-validator": "^1.0.0",
     "googleapis": "^159.0.0",
     "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
